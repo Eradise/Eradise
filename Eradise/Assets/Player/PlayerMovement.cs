@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	//parameters
-	private float maxSpeed = 6.0f;
-	private float runSpeed = 40.0f;
+	public float maxSpeed = 6.0f;
+	public float runSpeed = 40.0f;
 	private float distanceToGround;
 	private float rotationDegreesPerSecond = 600f;
 
