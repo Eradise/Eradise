@@ -136,7 +136,7 @@ Material:
     - _NormalAmount: 0.32
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _ReliefDepth: 0.02
+    - _ReliefDepth: -0.05
     - _ReliefQuality: 12
     - _RoughGloss: 1
     - _SmoothnessTextureChannel: 0
@@ -150,7 +150,7 @@ Material:
     - _SrcBlend: 1
     - _UVScale: 1
     - _UVSec: 0
-    - _UVTiling: 4
+    - _UVTiling: 300
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
