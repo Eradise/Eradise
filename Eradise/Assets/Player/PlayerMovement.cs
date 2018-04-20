@@ -30,11 +30,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	void FixedUpdate() {
 
-		if (CheckIfGrounded()) Debug.Log("grounded");
-
-		if (!CheckIfGrounded()) transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
-
-		rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+		rb.velocity = new Vector3(rb.velocity.x, -1f, rb.velocity.z);
 
 		//gets input
 		float horizontal = 0f;
@@ -65,10 +61,11 @@ public class PlayerMovement : MonoBehaviour {
 
 			//move cloth forward
 			if (direction.magnitude > 0.7f) {
-				GameObject.Find("Cloth").transform.localPosition = new Vector3(0, 0, 0.25f);
-				Debug.Log(GameObject.Find("Cloth").transform.position.z);
+				GetComponent<CapsuleCollider>().center = new Vector3(0, 1, 0.2f);
+				GameObject.Find("Player/Cloth").transform.localPosition = new Vector3(0, 0, 0.25f);
 			} else {
-				GameObject.Find("Cloth").transform.localPosition = new Vector3(0, 0, 0.1f);
+				GetComponent<CapsuleCollider>().center = new Vector3(0, 1, 0);
+				GameObject.Find("Player/Cloth").transform.localPosition = new Vector3(0, 0, 0.02f);
 			}
 		} else {
 			rb.velocity = new Vector3(0, rb.velocity.y, 0);
