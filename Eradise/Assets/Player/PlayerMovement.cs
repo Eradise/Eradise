@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour {
 	public bool walking = true;
 	public bool idle = false;
 
+	public float moveDown = -1f;
+
 	//components
 	private Rigidbody rb;
 	private Transform camera;
@@ -30,7 +32,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	void FixedUpdate() {
 
-		rb.velocity = new Vector3(rb.velocity.x, -1f, rb.velocity.z);
+		rb.velocity = new Vector3(rb.velocity.x, moveDown, rb.velocity.z);
 
 		//gets input
 		float horizontal = 0f;
@@ -62,10 +64,12 @@ public class PlayerMovement : MonoBehaviour {
 			//move cloth forward
 			if (direction.magnitude > 0.7f) {
 				GetComponent<CapsuleCollider>().center = new Vector3(0, 1, 0.2f);
-				GameObject.Find("Player/Cloth").transform.localPosition = new Vector3(0, 0, 0.25f);
+				GetComponent<CapsuleCollider>().height = 1.8f;
+				GameObject.Find("Player/Cloth").transform.localPosition = new Vector3(-0.03f, -0.1f, 0.25f);
 			} else {
 				GetComponent<CapsuleCollider>().center = new Vector3(0, 1, 0);
-				GameObject.Find("Player/Cloth").transform.localPosition = new Vector3(0, 0, 0.02f);
+				GetComponent<CapsuleCollider>().height = 2f;
+				GameObject.Find("Player/Cloth").transform.localPosition = new Vector3(-0.03f, 0, 0.02f);
 			}
 		} else {
 			rb.velocity = new Vector3(0, rb.velocity.y, 0);
