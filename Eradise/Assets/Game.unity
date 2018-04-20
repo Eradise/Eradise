@@ -2082,7 +2082,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 76730957}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -441.08057, y: 270.92, z: 389.9072}
+  m_LocalPosition: {x: -441.08057, y: 271.2, z: 389.9072}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1527364402}
@@ -13820,7 +13820,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 500655656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -443.68057, y: 268.96707, z: 324.8772}
+  m_LocalPosition: {x: -443.68057, y: 269.15, z: 324.8772}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519236073}
@@ -33019,10 +33019,10 @@ MonoBehaviour:
   MapToLDR: 0
   RemoveColorBanding: 1
   MatrixVP:
-    e00: 1.7606153
+    e00: 3.0266247
     e01: 0
     e02: 0
-    e03: -3.89096
+    e03: -6.688841
     e10: -0
     e11: -1.7320508
     e12: 0
@@ -33036,10 +33036,10 @@ MonoBehaviour:
     e32: 1
     e33: 3.93
   LastMatrixVP:
-    e00: 1.7606153
+    e00: 3.0266247
     e01: 0
     e02: 0
-    e03: -3.89096
+    e03: -6.688841
     e10: 0
     e11: 1.7320508
     e12: 0
@@ -33568,6 +33568,21 @@ Prefab:
         type: 2}
       propertyPath: m_Constraints
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 54432771075166544, guid: 2c89385242e8f18449a040250d3388a6,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 54432771075166544, guid: 2c89385242e8f18449a040250d3388a6,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54432771075166544, guid: 2c89385242e8f18449a040250d3388a6,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c89385242e8f18449a040250d3388a6, type: 2}
@@ -54943,25 +54958,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83b59a9ecd1f640f3bfa3ea0ce385607, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &2000601936 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1734723960963484, guid: 2c89385242e8f18449a040250d3388a6,
-    type: 2}
-  m_PrefabInternal: {fileID: 1237413676}
---- !u!64 &2000601938
-MeshCollider:
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2000601936}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300008, guid: 4ef0191d70b79454ba4e4074effa83f9, type: 3}
 --- !u!4 &2000693971 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4507490538516720, guid: b4fe3229186aa4b86b91c23a4228c991,
@@ -58123,7 +58119,7 @@ MonoBehaviour:
   FogTransitionSize: 5
   MaxLightDistance: 128
   AboveFogPercent: 0.1
-  Offset: {x: 817.2456, y: 817.2456, z: 0}
+  Offset: {x: 847.1715, y: 847.1715, z: 0}
 --- !u!1001 &2122009558
 Prefab:
   m_ObjectHideFlags: 0
