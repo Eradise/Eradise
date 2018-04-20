@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Start() {
 		camera = GameObject.Find("Camera").GetComponent<Transform>();
 		rb = GetComponent<Rigidbody>();
-		distanceToGround = GetComponent<Collider>().bounds.extents.y + 0.1f;
+		distanceToGround = GetComponent<Collider>().bounds.extents.y + 0.001f;
 	}
 
 	//handle running
@@ -43,6 +43,14 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+		//fix to ground
+		// int tries = 0;
+		// while (!CheckIfGrounded() && tries < 10) {
+		// 	tries++;
+		// 	rb.velocity = new Vector3(rb.velocity.x, -100, rb.velocity.z);
+		// 	Debug.Log("hi");
+		// }
+
 		if (!stoppedRunning) {
 			//gets input
 			float horizontal = 0f;
