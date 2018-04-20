@@ -80,7 +80,7 @@ public class CameraRotation : MonoBehaviour {
             }
 
             Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
-            Vector3 position = rotation * negDistance + target.position + new Vector3(0.0f, 1.0f, 0.0f);
+            Vector3 position = rotation * negDistance + target.position + new Vector3(0.0f, 2.0f, 0.0f);
  
             transform.rotation = rotation;
             transform.position = position;
