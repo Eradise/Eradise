@@ -25,12 +25,16 @@ public class PlayerMovement : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		camera = GameObject.Find("Camera").GetComponent<Transform>();
 		rb = GetComponent<Rigidbody>();
-		distanceToGround = GetComponent<Collider>().bounds.extents.y;
+		distanceToGround = GetComponent<Collider>().bounds.extents.y + 0.001f;
 	}
 
 	void FixedUpdate() {
 
-		rb.velocity = new Vector3(rb.velocity.x, -1f, rb.velocity.z);
+		if (CheckIfGrounded()) Debug.Log("grounded");
+
+		if (!CheckIfGrounded()) transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
+
+		rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
 
 		//gets input
 		float horizontal = 0f;
@@ -61,9 +65,10 @@ public class PlayerMovement : MonoBehaviour {
 
 			//move cloth forward
 			if (direction.magnitude > 0.7f) {
-				GameObject.Find("Player/Cloth").transform.localPosition = new Vector3(0, 0, 0.25f);
+				GameObject.Find("Cloth").transform.localPosition = new Vector3(0, 0, 0.25f);
+				Debug.Log(GameObject.Find("Cloth").transform.position.z);
 			} else {
-				GameObject.Find("Player/Cloth").transform.localPosition = new Vector3(0, 0, 0.1f);
+				GameObject.Find("Cloth").transform.localPosition = new Vector3(0, 0, 0.1f);
 			}
 		} else {
 			rb.velocity = new Vector3(0, rb.velocity.y, 0);
@@ -77,6 +82,6 @@ public class PlayerMovement : MonoBehaviour {
 
 	//check if the player is grounded
 	bool CheckIfGrounded() {
-		return Physics.Raycast(transform.position, -Vector3.up, 0);
+		return Physics.Raycast(new Vector3(transform.position.x, transform.position.y - 0.04f, transform.position.z), -Vector3.up, 0.5f);
 	}
 }
