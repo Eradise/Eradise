@@ -36,6 +36,11 @@ public class elevatorController : MonoBehaviour {
 	// ------------------------------------
 	void Update () {
 
+		//move player Y position according to elevator
+		if (m_transition && m_moving && m_goingDown) {
+			GameObject.Find("Player").transform.position = new Vector3(GameObject.Find("Player").transform.position.x, transform.position.y-3.2f, GameObject.Find("Player").transform.position.z);
+		}
+
 		// Transition animation
 		if (m_transition) {
 		

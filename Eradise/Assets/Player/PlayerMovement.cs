@@ -24,14 +24,22 @@ public class PlayerMovement : MonoBehaviour {
 	private Transform camera;
 
 	void Start() {
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+
 		anim = GetComponent<Animator>();
 		camera = GameObject.Find("Camera").GetComponent<Transform>();
 		rb = GetComponent<Rigidbody>();
 		distanceToGround = GetComponent<Collider>().bounds.extents.y + 0.001f;
 	}
 
-	void FixedUpdate() {
+	void Update() {
+		if (Input.GetKey("escape")) {
+			Application.Quit();
+		}
+	}
 
+	void FixedUpdate() {
 		rb.velocity = new Vector3(rb.velocity.x, moveDown, rb.velocity.z);
 
 		//gets input
